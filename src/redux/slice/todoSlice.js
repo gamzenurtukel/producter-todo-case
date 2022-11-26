@@ -13,13 +13,22 @@ const todoSlice = createSlice({
         {
           value: action.payload,
           id: nanoid(),
+          isDone: false,
         },
         ...state.todoList,
       ];
+    },
+    completeTodo: (state, action) => {
+      state.todoList.map((todo) => {
+        if (todo.id === action.payload) {
+          todo.isDone = !todo.isDone;
+        }
+        return todo;
+      });
     },
   },
 });
 
 export const getTodoList = (state) => state.todos.todoList;
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, completeTodo } = todoSlice.actions;
 export default todoSlice.reducer;
