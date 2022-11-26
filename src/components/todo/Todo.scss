@@ -1,0 +1,21 @@
+@import "../../styles/color.scss";
+@import "../../styles//variables.scss";
+
+.todo-container {
+  display: flex;
+  justify-content: flex-start;
+  max-width: $md;
+  min-height: $sm;
+  border: 1px solid $timberwolf;
+  background-color: $white;
+  border-radius: 1rem;
+
+  .todo-item {
+    margin-inline: 4rem;
+
+    h3 {
+      color: $black;
+      font-size: 2em;
+    }
+  }
+}
