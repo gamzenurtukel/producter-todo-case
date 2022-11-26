@@ -1,9 +1,12 @@
 import "./TodoForm.scss";
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../redux/slice/todoSlice";
 
 function TodoForm() {
   const [inputValue, setInputValue] = useState("");
+  const dispatch = useDispatch();
 
   const inputOnChange = (e) => {
     setInputValue(e.target.value);
@@ -11,6 +14,8 @@ function TodoForm() {
 
   const addButton = (e) => {
     e.preventDefault();
+    dispatch(addTodo(inputValue));
+    setInputValue("");
   };
 
   return (
