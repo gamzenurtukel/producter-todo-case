@@ -4,7 +4,7 @@
 .todo-container {
   display: flex;
   justify-content: flex-start;
-  max-width: $md;
+  min-width: $md;
   min-height: $sm;
   border: 1px solid $timberwolf;
   background-color: $white;
