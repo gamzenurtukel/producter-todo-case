@@ -2,13 +2,21 @@ import "./Todo.scss";
 
 import TodoForm from "../todoForm";
 import TodoList from "../todoList/TodoList";
-import { useSelector } from "react-redux";
-import { getSelectedTodo } from "../../redux/slice/todoSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  clearSelectedTodos,
+  getSelectedTodo,
+} from "../../redux/slice/todoSlice";
 
 function Todo() {
   const selectedItems = useSelector(getSelectedTodo);
+  const dispatch = useDispatch();
 
   console.log("selected", selectedItems.length);
+
+  const buttonClearAll = () => {
+    dispatch(clearSelectedTodos());
+  };
 
   return (
     <div className="todo-container">
@@ -18,7 +26,9 @@ function Todo() {
         <TodoList />
         <div className="item-check-status">
           <p>{selectedItems.length} item selected</p>
-          <p>clear all</p>
+          <button className="clear-all" onClick={() => buttonClearAll()}>
+            clear all
+          </button>
         </div>
       </div>
     </div>

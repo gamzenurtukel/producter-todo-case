@@ -38,12 +38,22 @@ const todoSlice = createSlice({
             );
           }
         }
+        return todo;
       });
+    },
+    clearSelectedTodos: (state) => {
+      state.todoList.map((todo) => {
+        if (todo.isDone === true) {
+          todo.isDone = !todo.isDone;
+        }
+      });
+      state.selectedTodo = [];
     },
   },
 });
 
 export const getSelectedTodo = (state) => state.todos.selectedTodo;
 export const getTodoList = (state) => state.todos.todoList;
-export const { addTodo, completeTodo, selectedTodos } = todoSlice.actions;
+export const { addTodo, completeTodo, selectedTodos, clearSelectedTodos } =
+  todoSlice.actions;
 export default todoSlice.reducer;

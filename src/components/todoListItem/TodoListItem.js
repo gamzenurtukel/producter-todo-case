@@ -16,7 +16,12 @@ function TodoListItem({ todo }) {
     <div className="todo-list-item">
       <label className="container">
         <input type="checkbox" />
-        <span className="checkmark" onClick={() => checkOnComplete()}></span>
+        <span
+          className={classNames("check-mark", {
+            "is-done-check": todo.isDone,
+          })}
+          onClick={() => checkOnComplete()}
+        ></span>
       </label>
       <p className={classNames({ "todo-is-done": todo.isDone })}>
         {todo.value}

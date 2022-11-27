@@ -14,9 +14,11 @@
     color: $ultramarine-blue;
   }
 }
+
 .todo-is-done {
   @include isdone($style: true);
 }
+
 .container {
   display: block;
   margin-block: 0.6em;
@@ -31,7 +33,6 @@
   user-select: none;
 }
 
-/* Hide the browser's default checkbox */
 .container input {
   position: absolute;
   opacity: 0;
@@ -40,8 +41,7 @@
   width: 0;
 }
 
-/* Create a custom checkbox */
-.checkmark {
+.check-mark {
   position: absolute;
   border-radius: 6em;
   border: 1px solid $black-shadows;
@@ -52,30 +52,36 @@
   background-color: $white;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.is-done-check {
+  position: absolute;
+  border-radius: 6em;
+  border: 1px solid $black-shadows;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
   background-color: $white;
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container:hover input ~ .check-mark {
+  background-color: $timberwolf;
+}
+
+.container input:checked ~ .is-done-check {
   background-color: $jungle-green;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.is-done-check:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked ~ .is-done-check:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
+.container .is-done-check:after {
   left: 9px;
   top: 5px;
   width: 5px;
