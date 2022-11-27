@@ -1,7 +1,7 @@
 import "./TodoListItem.scss";
 
 import { useDispatch } from "react-redux";
-import { completeTodo } from "../../redux/slice/todoSlice";
+import { completeTodo, selectedTodos } from "../../redux/slice/todoSlice";
 import classNames from "classnames";
 
 function TodoListItem({ todo }) {
@@ -9,7 +9,7 @@ function TodoListItem({ todo }) {
 
   const checkOnComplete = () => {
     dispatch(completeTodo(todo.id));
-    console.log("is done", todo.isDone);
+    dispatch(selectedTodos(todo.id));
   };
 
   return (

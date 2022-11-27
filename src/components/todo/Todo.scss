@@ -17,5 +17,13 @@
       color: $oxford-blue;
       font-size: 2em;
     }
+
+    .item-check-status {
+      display: flex;
+      justify-content: space-between;
+      color: $black-shadows;
+      border-top: 1px solid $timberwolf;
+      padding-bottom: 2rem;
+    }
   }
 }
