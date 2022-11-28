@@ -12,8 +12,6 @@ function Todo() {
   const selectedItems = useSelector(getSelectedTodo);
   const dispatch = useDispatch();
 
-  console.log("selected", selectedItems.length);
-
   const buttonClearAll = () => {
     dispatch(clearSelectedTodos());
   };
