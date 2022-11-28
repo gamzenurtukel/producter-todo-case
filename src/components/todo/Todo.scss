@@ -25,7 +25,7 @@
       border-top: 1px solid $timberwolf;
       padding-bottom: 2rem;
     }
-    .clear-all {
+    .btn-clear-all {
       background: transparent;
       border: none;
       color: $black-shadows;
@@ -33,7 +33,7 @@
       cursor: pointer;
       transition: filter 0.3s ease-out;
     }
-    .clear-all:hover {
+    .btn-clear-all:hover {
       filter: brightness(1.1);
     }
   }

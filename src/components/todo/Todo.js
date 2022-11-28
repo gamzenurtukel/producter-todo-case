@@ -24,7 +24,7 @@ function Todo() {
         <TodoList />
         <div className="item-check-status">
           <p>{selectedItems.length} item selected</p>
-          <button className="clear-all" onClick={() => buttonClearAll()}>
+          <button className="btn-clear-all" onClick={() => buttonClearAll()}>
             clear all
           </button>
         </div>
