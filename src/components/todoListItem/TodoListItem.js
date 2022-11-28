@@ -14,7 +14,7 @@ function TodoListItem({ todo }) {
 
   return (
     <div className="todo-list-item">
-      <label className="container">
+      <label className="check-box">
         <input type="checkbox" />
         <span
           className={classNames("check-mark", {
