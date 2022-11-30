@@ -46,6 +46,7 @@ const todoSlice = createSlice({
         if (todo.isDone === true) {
           todo.isDone = !todo.isDone;
         }
+        return todo;
       });
       state.selectedTodo = [];
     },
