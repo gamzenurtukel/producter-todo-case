@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render } from "@testing-library/react";
+import App from "./App";
+import { Provider } from "react-redux";
+import configureStore from "redux-mock-store";
+import Todo from "./components/todo";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("<App/>", () => {
+  const initialState = {
+    todos: [],
+  };
+  const mockStore = configureStore();
+  let store;
+  test("App render", () => {
+    store = mockStore(initialState);
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+    expect(<Todo />).toBeDefined();
+  });
 });
