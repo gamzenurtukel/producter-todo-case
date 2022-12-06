@@ -10,7 +10,7 @@ function TodoList() {
   return (
     <div className="todo-list-container">
       <ul>
-        {todoList.map((todo) => (
+        {todoList?.map((todo) => (
           <li key={todo.id}>
             <TodoListItem todo={todo} />
           </li>
